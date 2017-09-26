@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+/**
+ * Created by Kunec on 26/09/2017.
+ */
+public class NeighbourWars {
+    public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+        Integer peshoDamage = Integer.parseInt(console.nextLine().trim());
+        Integer goshoDamage = Integer.parseInt(console.nextLine().trim());
+        Integer peshoHealth = 100;
+        Integer goshoHealth = 100;
+
+        Integer turn = 0;
+
+        while ( peshoHealth>0 && goshoHealth>0)
+        {
+            turn++;
+            if(turn % 2 != 0) {
+                goshoHealth-=peshoDamage;
+
+                if ( goshoHealth<1) {
+
+                    System.out.printf("Pesho won in %dth round.\n",turn);
+                    break;
+                }
+                System.out.printf("Pesho used Roundhouse kick and reduced Gosho to %d health.\n",goshoHealth);
+
+            }else  {
+                peshoHealth-=goshoDamage;
+
+                if (peshoHealth<1) {
+
+                    System.out.printf("Gosho won in %dth round.\n",turn);
+                    break;
+                }
+                System.out.printf("Gosho used Thunderous fist and reduced Pesho to %d health.\n",peshoHealth);
+            }
+
+            if (turn%3 == 0) {
+                peshoHealth+=10;
+                goshoHealth+=10;
+
+            }
+        }
+
+    }
+}
