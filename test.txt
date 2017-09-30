@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /**
  * Created by Kunec on 26/09/2017.
+Updating with Tortoise
  */
 public class NeighbourWars {
     public static void main(String[] args) {
